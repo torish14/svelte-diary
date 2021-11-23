@@ -1,4 +1,5 @@
 <script>
+import "smelte/src/tailwind.css"
 import { Router, Link, Route } from 'svelte-routing'
 import Header from './components/Header.svelte'
 import Footer from './components/Footer.svelte'
@@ -12,7 +13,9 @@ export let url
 
 <main>
 	<Header />
+
 	<Router url="{url}">
+		<Route path="home" component="{Home}" />
 		<Route path="diary/:id" component="{Diary}" />
 		<Route path="create" component="{Create}" />
 		<Route path="about" component="{About}" />
