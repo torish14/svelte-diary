@@ -7,6 +7,6 @@ import { Router, Link, Route } from 'svelte-routing'
 	<Router>
     <Link to="/">Home</Link>
     <Link to="about">About</Link>
-
+    <Link to="create">Create</Link>
   </Router>
 </header>
