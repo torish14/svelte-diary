@@ -24,7 +24,7 @@ function serve() {
         {
           stdio: ['ignore', 'inherit', 'inherit'],
           shell: true,
-        }
+        },
       )
 
       process.on('SIGTERM', toExit)
@@ -56,8 +56,11 @@ export default {
       whitelistPatterns: [], // Same as above, but list of regexes
       tailwind: {
         colors: {
-          primary: '#b027b0',
+          primary: '#B983FF',
           secondary: '#009688',
+          accent: '#99FEFF',
+          background: '#94B3FD',
+          white: '#ffffff',
           error: '#f44336',
           success: '#4caf50',
           alert: '#ff9800',
