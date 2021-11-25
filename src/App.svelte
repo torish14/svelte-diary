@@ -11,7 +11,7 @@ import About from './components/About.svelte'
 export let url
 </script>
 
-<main>
+<main class="bg-background-500">
 	<Header />
 
 	<Router url="{url}">
