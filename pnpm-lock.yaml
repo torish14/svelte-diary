@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@rollup/plugin-commonjs': ^17.0.0
   '@rollup/plugin-node-resolve': ^11.0.0
+  carbon-icons-svelte: ^10.38.0
   prettier: ^2.4.1
   prettier-plugin-svelte: ^2.5.0
   rollup: ^2.3.4
@@ -17,6 +18,7 @@ specifiers:
   svelte-routing: ^1.6.0
 
 dependencies:
+  carbon-icons-svelte: 10.38.0
   prettier: 2.4.1
   prettier-plugin-svelte: 2.5.0_prettier@2.4.1+svelte@3.44.2
   sirv-cli: 1.0.14
@@ -296,6 +298,10 @@ packages:
 
   /caniuse-lite/1.0.30001282:
     resolution: {integrity: sha512-YhF/hG6nqBEllymSIjLtR2iWDDnChvhnVJqp+vloyt2tEHFG1yBR+ac2B/rOw0qOK0m0lEXU2dv4E/sMk5P9Kg==}
+    dev: false
+
+  /carbon-icons-svelte/10.38.0:
+    resolution: {integrity: sha512-uEckbbNHFtDzKz+QRx6GxvZcezXXqfDOiaE7mupkiRPkBbALrA9CPJZbI5Q2XW5mpn8lgN3IlTm2u1iJEAlVJw==}
     dev: false
 
   /chalk/2.4.2:
