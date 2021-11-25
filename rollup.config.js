@@ -57,7 +57,7 @@ export default {
       tailwind: {
         colors: {
           primary: '#B983FF',
-          secondary: '#009688',
+          secondary: '#94DAFF',
           accent: '#99FEFF',
           background: '#94B3FD',
           white: '#ffffff',
