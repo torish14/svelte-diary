@@ -13,6 +13,7 @@ specifiers:
   sirv-cli: ^1.0.0
   smelte: ^1.1.8
   svelte: ^3.0.0
+  svelte-hamburgers: ^3.0.1
   svelte-routing: ^1.6.0
 
 dependencies:
@@ -20,6 +21,7 @@ dependencies:
   prettier-plugin-svelte: 2.5.0_prettier@2.4.1+svelte@3.44.2
   sirv-cli: 1.0.14
   smelte: 1.1.8
+  svelte-hamburgers: 3.0.1
   svelte-routing: 1.6.0_svelte@3.44.2
 
 devDependencies:
@@ -2062,6 +2064,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
+
+  /svelte-hamburgers/3.0.1:
+    resolution: {integrity: sha512-Qf9BHjX3wstNs0shrQd7b0yGFpZGKJclvWtFgfjg27IBHIhr2lr8nkj1R4XwPKfv21cstGTCdqY28192Cx82zw==}
+    dev: false
 
   /svelte-routing/1.6.0_svelte@3.44.2:
     resolution: {integrity: sha512-+DbrSGttLA6lan7oWFz1MjyGabdn3tPRqn8Osyc471ut2UgCrzM5x1qViNMc2gahOP6fKbKK1aNtZMJEQP2vHQ==}
