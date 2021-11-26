@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "carbon-icons-svelte": "^10.38.0",
+    "firebase": "^9.5.0",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.5.0",
     "sirv-cli": "^1.0.0",
