@@ -7,6 +7,7 @@ import Diary from './components/Diary.svelte'
 import Footer from './components/Footer.svelte'
 import Header from './components/Header.svelte'
 import Home from './components/Home.svelte'
+import './helpers/firebase'
 
 export let url
 </script>
