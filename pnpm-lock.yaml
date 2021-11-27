@@ -10,6 +10,7 @@ specifiers:
   eslint-plugin-import: ^2.25.3
   eslint-plugin-svelte3: ^3.2.1
   firebase: ^9.5.0
+  js-cookie: ^3.0.1
   prettier: ^2.5.0
   prettier-plugin-svelte: ^2.5.0
   rollup: ^2.3.4
@@ -28,6 +29,7 @@ dependencies:
   carbon-icons-svelte: 10.38.0
   dotenv: 10.0.0
   firebase: 9.5.0
+  js-cookie: 3.0.1
   sirv-cli: 1.0.14
   smelte: 1.1.8
   svelte-hamburgers: 3.0.1
@@ -2064,6 +2066,11 @@ packages:
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
+
+  /js-cookie/3.0.1:
+    resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
+    engines: {node: '>=12'}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
