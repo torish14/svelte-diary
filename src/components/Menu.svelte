@@ -7,7 +7,7 @@ export let open
 </script>
 
 {#if open}
-  <nav class="bg-primary-900" on:click="{() => open = false}">
+  <nav class="bg-primary-900" on:click={() => (open = false)}>
     <Router>
       <Link class="block" to="/">Home</Link>
       <Link class="block" to="about">About</Link>
