@@ -41,13 +41,13 @@ nav {
   padding-top: 0;
   color: #eef;
 }
-a {
-  cursor: pointer;
-  width: max-content;
-  margin: 1rem auto;
-  display: block;
-}
-p:hover {
-  text-decoration: underline;
-}
+/* a { */
+  /* cursor: pointer; */
+  /* width: max-content; */
+  /* margin: 1rem auto; */
+  /* display: block; */
+/* } */
+/* p:hover { */
+  /* text-decoration: underline; */
+/* } */
 </style>
