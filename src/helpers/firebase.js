@@ -8,6 +8,8 @@ import {
   signInWithPopup,
   // eslint-disable-next-line
   GoogleAuthProvider,
+  // eslint-disable-next-line
+  signOut,
 } from 'firebase/auth'
 import { userId } from '../store'
 import Cookies from 'js-cookie'
@@ -63,5 +65,18 @@ export const signInWithGoogle = () => {
       // eslint-disable-next-line
       const credential = GoogleAuthProvider.credentialFromError(error)
       // ...
+    })
+}
+
+export const googleSignOut = () => {
+  signOut(auth)
+    .then(() => {
+      // Cookie を削除
+      Cookies.remove('uid')
+      // 画面を更新
+      document.location.reload()
+    })
+    .catch(() => {
+      alert('ログアウトできませんでした')
     })
 }
