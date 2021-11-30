@@ -7,7 +7,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "lint": "eslint --fix --quiet src --ext .js,.svelte",
-    "format": "prettier --write '{public,src}/**/*.{css,html,js,svelte}'"
+    "format": "prettier --write --plugin-search-dir=. ./**/*.{js,svelte}"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
