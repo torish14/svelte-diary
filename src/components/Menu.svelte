@@ -1,13 +1,18 @@
 <script>
+import { onDestroy } from 'svelte'
 import { Router, Link } from 'svelte-routing'
-import { fly, scale } from 'svelte/transition'
+import { scale } from 'svelte/transition'
 import { quadOut } from 'svelte/easing'
-import { signInWithGoogle } from '../helpers/firebase'
+import { signInWithGoogle, googleSignOut } from '../helpers/firebase'
 import { userId } from '../store'
 let uid
 
-userId.subscribe( id => {
+const unsbscribe = userId.subscribe((id) => {
   uid = id
+})
+
+onDestroy(() => {
+  unsbscribe
 })
 
 export let open
@@ -15,12 +20,19 @@ export let open
 
 {#if open}
   <nav class="bg-primary-900" on:click={() => (open = false)}>
-    {uid}
     <Router>
       <Link class="block" to="/">Home</Link>
       <Link class="block" to="about">About</Link>
       <Link class="block" to="create">Create</Link>
-      <Link class="block" to="#" on:click={signInWithGoogle}>ログイン</Link>
+      {#if !uid}
+        <Link class="block" to="#" on:click={signInWithGoogle}
+          >ログイン</Link
+        >
+      {:else}
+        <Link class="block" to="#" on:click={googleSignOut}
+          >ログアウト</Link
+        >
+      {/if}
     </Router>
     <hr
       transition:scale={{
@@ -42,12 +54,12 @@ nav {
   color: #eef;
 }
 /* a { */
-  /* cursor: pointer; */
-  /* width: max-content; */
-  /* margin: 1rem auto; */
-  /* display: block; */
+/* cursor: pointer; */
+/* width: max-content; */
+/* margin: 1rem auto; */
+/* display: block; */
 /* } */
 /* p:hover { */
-  /* text-decoration: underline; */
+/* text-decoration: underline; */
 /* } */
 </style>
