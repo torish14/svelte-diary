@@ -13,7 +13,7 @@ const submit = () => {
 <h3>日記を書こう！</h3>
 <form class="p-5" on:submit|preventDefault={submit}>
   <p class="mb-4">今日の気分は{rate}点です</p>
-  <Slider class="mb-4" min="0" max="10" bind:value={rate} />
+  <Slider class="mb-4" min="1" max="10" bind:value={rate} />
   <TextField label="日記の本文" class="bg-white-900" bind:value={body} textarea rows="5" outlined />
   <Button type="submit" class="text-white-900">日記を保存</Button>
 </form>
