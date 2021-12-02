@@ -3,7 +3,7 @@ import { onDestroy } from 'svelte'
 import { Slider, TextField, Button } from 'smelte'
 import { userId } from '../store'
 let uid = null
-const unsubscribe = userId.subscribe( id => uid = id)
+const unsubscribe = userId.subscribe(id => uid = id)
 console.log('uid : ' + uid)
 
 let rate = 5
