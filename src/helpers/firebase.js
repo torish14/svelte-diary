@@ -11,6 +11,7 @@ import {
   // eslint-disable-next-line
   signOut,
 } from 'firebase/auth'
+// eslint-disable-next-line
 import { getFirestore } from 'firebase/firestore'
 import { userId } from '../store'
 import Cookies from 'js-cookie'
