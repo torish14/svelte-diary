@@ -2,6 +2,8 @@
 import { onDestroy } from 'svelte'
 import { Slider, TextField, Button } from 'smelte'
 import { userId } from '../store'
+import { postDiary } from '../helpers/api'
+
 let uid = null
 const unsubscribe = userId.subscribe(id => uid = id)
 console.log('uid : ' + uid)
@@ -17,6 +19,7 @@ const submit = () => {
   // firestore へ POSTする関数を呼び出す
   console.log('submit')
   console.log(uid, rate, body)
+  postDiary(uid, rate, body)
 }
 onDestroy( () => {
   unsubscribe
