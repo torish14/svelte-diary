@@ -10,6 +10,10 @@ let rate = 5
 let body = ''
 
 const submit = () => {
+  if (body.length < 10) {
+    alert('日記の内容を10文字以上書いてください')
+    return false
+  }
   // firestore へ POSTする関数を呼び出す
   console.log('submit')
   console.log(uid, rate, body)
