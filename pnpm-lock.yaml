@@ -5,6 +5,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^11.0.0
   '@rollup/plugin-replace': ^3.0.0
   carbon-icons-svelte: ^10.38.0
+  dayjs: ^1.10.7
   dotenv: ^10.0.0
   eslint: ^8.3.0
   eslint-plugin-import: ^2.25.3
@@ -27,6 +28,7 @@ specifiers:
 dependencies:
   '@rollup/plugin-replace': 3.0.0_rollup@2.60.0
   carbon-icons-svelte: 10.38.0
+  dayjs: 1.10.7
   dotenv: 10.0.0
   firebase: 9.5.0
   js-cookie: 3.0.1
@@ -1187,6 +1189,10 @@ packages:
 
   /cuint/0.2.2:
     resolution: {integrity: sha1-QICG1AlVDCYxFVYZ6fp7ytw7mRs=}
+    dev: false
+
+  /dayjs/1.10.7:
+    resolution: {integrity: sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==}
     dev: false
 
   /debug/2.6.9:
