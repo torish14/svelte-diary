@@ -35,7 +35,7 @@ const firebaseConfig = {
 // Initialize Firebase
 // eslint-disable-next-line
 const app = initializeApp(firebaseConfig)
-export const db = getFirestore
+export const db = getFirestore()
 const provider = new GoogleAuthProvider()
 const auth = getAuth()
 
