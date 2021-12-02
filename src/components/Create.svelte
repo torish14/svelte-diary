@@ -1,5 +1,10 @@
 <script>
+import { onDestroy } from 'svelte'
 import { Slider, TextField, Button } from 'smelte'
+import { userId } from '../store'
+let uid = null
+const unsubscribe = userId.subscribe( id => uid = id)
+console.log('uid : ' + uid)
 
 let rate = 5
 let body = ''
@@ -8,6 +13,9 @@ const submit = () => {
   // firestore へ POSTする関数を呼び出す
   console.log('submit')
 }
+onDestroy( () => {
+  unsubscribe
+})
 </script>
 
 <h3>日記を書こう！</h3>
