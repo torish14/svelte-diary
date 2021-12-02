@@ -12,6 +12,7 @@ let body = ''
 const submit = () => {
   // firestore へ POSTする関数を呼び出す
   console.log('submit')
+  console.log(uid, rate, body)
 }
 onDestroy( () => {
   unsubscribe
