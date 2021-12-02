@@ -11,6 +11,7 @@ import {
   // eslint-disable-next-line
   signOut,
 } from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
 import { userId } from '../store'
 import Cookies from 'js-cookie'
 
@@ -33,7 +34,7 @@ const firebaseConfig = {
 // Initialize Firebase
 // eslint-disable-next-line
 const app = initializeApp(firebaseConfig)
-
+export const db = getFirestore
 const provider = new GoogleAuthProvider()
 const auth = getAuth()
 
