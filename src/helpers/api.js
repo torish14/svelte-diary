@@ -25,13 +25,13 @@ export const fetch = async (uid) => {
     console.log(doc.id, ' => ', doc.data())
     diaries.push({
       id: doc.id,
-      body: doc.data().body,
       rate: doc.data().rate,
+      body: doc.data().body,
       image: doc.data().image,
       createdAt: doc.data().createdAt,
     })
-    return diaries
   })
+  return diaries
 }
 
 // Add a new document with a generated id.
