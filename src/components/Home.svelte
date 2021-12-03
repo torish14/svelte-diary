@@ -33,5 +33,3 @@ onDestroy(() => { unsubscribe })
     {/each}
   </Router>
 {/await}
-<h1>Home</h1>
-<Button color="accent">テスト</Button>
