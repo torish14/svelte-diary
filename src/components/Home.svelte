@@ -23,9 +23,9 @@ onDestroy(() => { unsubscribe })
   <Router>
     {#each diaries as d}
       <Link to={'/diary/' + d.id} class="flex item-center">
-        <aside>
+        <aside class="diary-aside">
           <p>{d.createdAt}</p>
-          image
+          <img src={d.image ? d.image : '/dummy.jpeg'} class="diary-image" alt="diary" />
           <p><StarRating rating={d.rate / 2} /></p>
           <p>{d.body}</p>
         </aside>
