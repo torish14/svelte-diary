@@ -7,7 +7,7 @@ import { fetch } from '../helpers/api'
 
 let uid
 const unsubscribe = userId.subscribe(id => uid = id)
-let promise
+let promise = fetch()
 onMount(async () => {
   promise = await fetch(uid)
   console.log(promise)
@@ -15,5 +15,10 @@ onMount(async () => {
 onDestroy(() => { unsubscribe })
 </script>
 
+{#await promise}
+  <p>Loading...</p>
+{:then diaries}
+  <p>Loaded!</p>
+{/await}
 <h1>Home</h1>
 <Button color="accent">テスト</Button>
