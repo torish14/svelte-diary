@@ -1,7 +1,38 @@
-// eslint-disable-next-line
-import { collection, addDoc } from 'firebase/firestore'
+import {
+  // eslint-disable-next-line
+  collection,
+  // eslint-disable-next-line
+  addDoc,
+  // eslint-disable-next-line
+  query,
+  // eslint-disable-next-line
+  where,
+  // eslint-disable-next-line
+  getDocs,
+  // eslint-disable-next-line
+  orderBy,
+} from 'firebase/firestore'
 import { db } from './firebase'
 import dayjs from 'dayjs'
+
+export const fetch = async (uid) => {
+  const q = query(collection(db, 'diaries'), where('uid', '==', uid))
+
+  const querySnapshot = await getDocs(q)
+  let diaries = []
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, ' => ', doc.data())
+    diaries.push({
+      id: doc.id,
+      body: doc.data().body,
+      rate: doc.data().rate,
+      image: doc.data().image,
+      createdAt: doc.data().createdAt,
+    })
+    return diaries
+  })
+}
 
 // Add a new document with a generated id.
 export const postDiary = (uid = '', rate = 1, body = '') => {
