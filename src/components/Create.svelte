@@ -11,7 +11,7 @@ console.log('uid : ' + uid)
 let rate = 5
 let body = ''
 
-const submit = async() => {
+const submit = async () => {
   if (body.length < 10) {
     alert('日記の内容を10文字以上書いてください')
     return false
