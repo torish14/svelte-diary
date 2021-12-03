@@ -11,7 +11,7 @@ console.log('uid : ' + uid)
 let rate = 5
 let body = ''
 
-const submit = () => {
+const submit = async() => {
   if (body.length < 10) {
     alert('日記の内容を10文字以上書いてください')
     return false
@@ -20,7 +20,7 @@ const submit = () => {
   console.log('submit!')
   console.log(uid, rate, body)
   postDiary(uid, rate, body)
-  /* const result = postDiary(uid, rate, body) */
+  /* const result = await postDiary(uid, rate, body) */
   /* if(!result) { */
     /* alert('日記の保存が失敗しました') */
   /* } else { */
