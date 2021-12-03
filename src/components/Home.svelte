@@ -20,7 +20,18 @@ onDestroy(() => { unsubscribe })
 {#await promise}
   <p>Loading...</p>
 {:then diaries}
-  <p>Loaded!</p>
+  <Router>
+    {#each diaries as d}
+      <Link to={'/diary/' + d.id} class="flex item-center">
+        <aside>
+          <p>{d.createdAt}</p>
+          image
+          <p><StarRating rating={d.rate / 2} /></p>
+          <p>{d.body}</p>
+        </aside>
+      </Link>
+    {/each}
+  </Router>
 {/await}
 <h1>Home</h1>
 <Button color="accent">テスト</Button>
