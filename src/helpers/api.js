@@ -15,7 +15,7 @@ import {
 import { db } from './firebase'
 import dayjs from 'dayjs'
 
-export const fetch = async (uid) => {
+export const fetch = async (uid = '') => {
   const q = query(
     collection(db, 'diaries'),
     where('uid', '==', uid),
