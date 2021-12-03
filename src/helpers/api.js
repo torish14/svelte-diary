@@ -16,7 +16,11 @@ import { db } from './firebase'
 import dayjs from 'dayjs'
 
 export const fetch = async (uid) => {
-  const q = query(collection(db, 'diaries'), where('uid', '==', uid))
+  const q = query(
+    collection(db, 'diaries'),
+    where('uid', '==', uid),
+    orderBy('createdAt', 'desc'),
+  )
 
   const querySnapshot = await getDocs(q)
   let diaries = []
