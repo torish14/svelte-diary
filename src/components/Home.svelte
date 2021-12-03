@@ -33,3 +33,14 @@ onDestroy(() => { unsubscribe })
     {/each}
   </Router>
 {/await}
+
+<style>
+.diary-aside {
+  width: 40%;
+  margin-right: 1rem;
+}
+
+.diary-image {
+  width: 100%;
+}
+</style>
