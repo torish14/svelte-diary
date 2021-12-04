@@ -25,7 +25,7 @@ onDestroy(() => { unsubscribe })
     {#each diaries as d}
       <Link to={'/diary/' + d.id} class="flex item-center">
         <aside class="diary-aside">
-          <p>{d.createdAt}</p>
+          <p class="text-left">{dayjs(d.createdAt).format('YYYY年MM月DD日')}</p>
           <img src={d.image ? d.image : '/dummy.jpeg'} class="diary-image" alt="diary" />
           <p><StarRating rating={d.rate / 2} /></p>
           <p>{d.body}</p>
