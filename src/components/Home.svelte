@@ -1,8 +1,9 @@
 <script>
 // ライフサイクルについてのドキュメント：https://tech-wiki.online/jp/svelte-lifecycle-events.html
 import { onMount, onDestroy } from 'svelte'
+import { signInWithGoogle } from '../helpers/firebase'
 import { Router, Link } from 'svelte-routing'
-import { Button } from 'smelte'
+import { Button, ProgressCircular } from 'smelte'
 import { userId } from '../store'
 import { fetch } from '../helpers/api'
 import StarRating from 'svelte-star-rating'
