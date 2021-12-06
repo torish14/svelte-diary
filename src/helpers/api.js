@@ -2,6 +2,10 @@ import {
   // eslint-disable-next-line
   collection,
   // eslint-disable-next-line
+  doc,
+  // eslint-disable-next-line
+  getDoc,
+  // eslint-disable-next-line
   addDoc,
   // eslint-disable-next-line
   query,
@@ -53,4 +57,17 @@ export const postDiary = (uid = '', rate = 1, body = '') => {
     // return docRef.id ? true : false
   }
   setFirestore()
+}
+
+export const getDiary = async (id = '') => {
+  const docRef = doc(db, 'diaries', id)
+  const docSnap = await getDoc(docRef)
+
+  if (docSnap.exists()) {
+    console.log('Document data:', docSnap.data())
+    return docSnap.data()
+  } else {
+    console.log('No such document!')
+    return false
+  }
 }
