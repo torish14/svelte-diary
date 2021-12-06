@@ -22,9 +22,9 @@ onDestroy(() => {
 </script>
 
 {#if !uid}
-  <Button on:click={signInWithGoogle} class="text-white-900 mt-10"
-    >ログイン</Button
-  >
+  <Button on:click={signInWithGoogle} class="text-white-900 mt-10">
+    ログイン
+  </Button>
 {:else}
   {#await promise}
     <p class="mt-10 flex justify-center"><ProgressCircular /></p>
