@@ -15,6 +15,8 @@ import {
   getDocs,
   // eslint-disable-next-line
   orderBy,
+  // eslint-disable-next-line
+  updateDoc,
 } from 'firebase/firestore'
 import { db } from './firebase'
 import dayjs from 'dayjs'
@@ -67,4 +69,20 @@ export const getDiary = async (id = '') => {
     console.log('No such document!')
     return false
   }
+}
+
+export const updateDiary = async (
+  id = '',
+  rate = 1,
+  body = '',
+  // image = '',
+) => {
+  const diaryRef = doc(db, 'diaries', id)
+
+  // Set the "capital" field of the city 'DC
+  await updateDoc(diaryRef, {
+    rate: rate,
+    body: body,
+    image: '',
+  })
 }
