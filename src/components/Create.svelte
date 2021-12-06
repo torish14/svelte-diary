@@ -5,7 +5,7 @@ import { userId } from '../store'
 import { postDiary } from '../helpers/api'
 
 let uid = null
-const unsubscribe = userId.subscribe(id => uid = id)
+const unsubscribe = userId.subscribe((id) => (uid = id))
 console.log('uid : ' + uid)
 
 let rate = 5
@@ -22,13 +22,13 @@ const submit = async () => {
   postDiary(uid, rate, body)
   /* const result = await postDiary(uid, rate, body) */
   /* if(!result) { */
-    /* alert('日記の保存が失敗しました') */
+  /* alert('日記の保存が失敗しました') */
   /* } else { */
-    /* alert ('日記が保存されました！') */
-    /* document.location.href = '/' */
+  /* alert ('日記が保存されました！') */
+  /* document.location.href = '/' */
   /* } */
 }
-onDestroy( () => {
+onDestroy(() => {
   unsubscribe
 })
 </script>
@@ -37,6 +37,13 @@ onDestroy( () => {
 <form class="p-5" on:submit|preventDefault={submit}>
   <p class="mb-4">今日の気分は{rate}点です</p>
   <Slider class="mb-4" min="1" max="10" bind:value={rate} />
-  <TextField label="日記の本文" class="bg-white-900" bind:value={body} textarea rows="5" outlined />
+  <TextField
+    label="日記の本文"
+    class="bg-white-900"
+    bind:value={body}
+    textarea
+    rows="5"
+    outlined
+  />
   <Button type="submit" class="text-white-900">日記を保存</Button>
 </form>

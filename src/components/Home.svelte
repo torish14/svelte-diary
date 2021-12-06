@@ -10,17 +10,21 @@ import StarRating from 'svelte-star-rating'
 import dayjs from 'dayjs'
 
 let uid
-const unsubscribe = userId.subscribe(id => uid = id)
+const unsubscribe = userId.subscribe((id) => (uid = id))
 let promise = fetch()
 onMount(async () => {
   promise = await fetch(uid)
   console.log(promise)
 })
-onDestroy(() => { unsubscribe })
+onDestroy(() => {
+  unsubscribe
+})
 </script>
 
 {#if !uid}
-  <Button on:click={signInWithGoogle} class="text-white-900 mt-10">ログイン</Button>
+  <Button on:click={signInWithGoogle} class="text-white-900 mt-10"
+    >ログイン</Button
+  >
 {:else}
   {#await promise}
     <p class="mt-10 flex justify-center"><ProgressCircular /></p>
@@ -29,8 +33,14 @@ onDestroy(() => { unsubscribe })
       {#each diaries as d}
         <Link to={'/diary/' + d.id} class="flex items-center mb-6">
           <aside class="diary-aside">
-            <p class="text-left">{dayjs(d.createdAt).format('YYYY年MM月DD日')}</p>
-            <img src={d.image ? d.image : '/dummy.jpeg'} class="diary-image" alt="diary" />
+            <p class="text-left">
+              {dayjs(d.createdAt).format('YYYY年MM月DD日')}
+            </p>
+            <img
+              src={d.image ? d.image : '/dummy.jpeg'}
+              class="diary-image"
+              alt="diary"
+            />
             <p><StarRating rating={d.rate / 2} /></p>
             <p>{d.body}</p>
           </aside>
