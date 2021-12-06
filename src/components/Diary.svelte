@@ -22,8 +22,14 @@ const submit = () => {
 {#await promise}
   <p class="mt-10 flex justify-center"><ProgressCircular /></p>
 {:then}
-  <h1>{dayjs(promise.createdAt).format('YYYY年MM月DD日')}の日記</h1>
+  <h1 class="h4">
+    {dayjs(promise.createdAt).format('YYYY年MM月DD日')}の日記
+  </h1>
   <form class="p-5" on:submit|preventDefault={submit}>
+    <img
+      src={promise.image ? promise.image : '/dummy.jpeg'}
+      alt="diary"
+    />
     <p class="mb-4">気分は{rate}点です</p>
     <Slider class="mb-4" min="1" max="10" bind:value={rate} />
     <TextField
