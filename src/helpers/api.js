@@ -79,6 +79,9 @@ export const updateDiary = async (
 ) => {
   const diaryRef = doc(db, 'diaries', id)
 
+  if (!diaryRef) {
+    return false
+  }
   // Set the "capital" field of the city 'DC
   await updateDoc(diaryRef, {
     rate: rate,
