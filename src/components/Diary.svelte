@@ -16,13 +16,14 @@ onMount(async () => {
 })
 const submit = async () => {
   console.log(promise)
-  const returnValue = await updateDiary(id, rate, body)
-  if (returnValue) {
-    alert('日記の更新が完了しました')
-  } else {
-    alert('更新ができませんでした')
-    document.location.href = '/'
-  }
+  await updateDiary(id, rate, body)
+  /* const returnValue = await updateDiary(id, rate, body) */
+  /* if (returnValue) { */
+  /* alert('日記の更新が完了しました') */
+  /* } else { */
+  /* alert('更新ができませんでした') */
+  /* document.location.href = '/' */
+  /* } */
 }
 </script>
 
