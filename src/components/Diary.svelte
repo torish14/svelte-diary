@@ -1,7 +1,7 @@
 <script>
 import { onMount } from 'svelte'
 import { Slider, TextField, Button, ProgressCircular } from 'smelte'
-import { getDiary } from '../helpers/api'
+import { getDiary, updateDiary } from '../helpers/api'
 import dayjs from 'dayjs'
 export let id
 console.log(id)
@@ -14,8 +14,9 @@ onMount(async () => {
   body = promise.body
   console.log(promise)
 })
-const submit = () => {
+const submit = async () => {
   console.log(promise)
+  const returnValue = await updateDiary(id, rate, body)
 }
 </script>
 
