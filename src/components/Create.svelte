@@ -10,6 +10,8 @@ console.log('uid : ' + uid)
 
 let rate = 5
 let body = ''
+let image,
+  preview = ''
 
 const submit = async () => {
   if (body.length < 10) {
