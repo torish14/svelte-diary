@@ -57,5 +57,16 @@ const onFileSelect = (e) => {
     rows="5"
     outlined
   />
+  {#if preview}
+    <img src={preview} alt="preview" />
+  {/if}
+  <input
+    type="file"
+    accept="image/*"
+    bind:this={image}
+    on:change={(e) => {
+      onFileSelect(e)
+    }}
+  />
   <Button type="submit" class="text-white-900">日記を保存</Button>
 </form>
