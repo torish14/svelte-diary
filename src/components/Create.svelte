@@ -33,6 +33,16 @@ const submit = async () => {
 onDestroy(() => {
   unsubscribe
 })
+
+const onFileSelect = (e) => {
+  let target = e.target.files[0]
+  image = target
+  let reader = new FileReader()
+  reader.readAsDataURL(target)
+  reader.onload = (e) => {
+    preview = e.target.result
+  }
+}
 </script>
 
 <h3>日記を書こう！</h3>
