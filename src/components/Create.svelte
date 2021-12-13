@@ -34,6 +34,7 @@ onDestroy(() => {
   unsubscribe
 })
 
+// アップロードした画像のプレビュー機能
 const onFileSelect = (e) => {
   let target = e.target.files[0]
   image = target
