@@ -43,9 +43,29 @@ const onFileSelect = (e) => {
     {dayjs(promise.createdAt).format('YYYY年MM月DD日')}の日記
   </h1>
   <form class="p-5" on:submit|preventDefault={submit}>
-    <img
-      src={promise.image ? promise.image : '/dummy.jpeg'}
-      alt="diary"
+    {#if !preview}
+      <img
+        src={promise.image ? promise.image : '/dummy.jpeg'}
+        alt="diary"
+        class="mb-4"
+      />
+    {:else}
+      <img
+        src={preview}
+        alt="diary"
+        class="mb-4"
+      />
+    {/if}
+    <label for="file-input" class="bg-primary-900 text-white-900 px-4 py-3 mb-6 rounded m-auto  block w-4/12">画像を選択</label>
+    <input
+      type="file"
+      accept="image/*"
+      id="file-input"
+      class="hidden"
+      bind:this={image}
+      on:change={(e) => {
+        onFileSelect(e)
+      }}
     />
     <p class="mb-4">気分は{rate}点です</p>
     <Slider class="mb-4" min="1" max="10" bind:value={rate} />
