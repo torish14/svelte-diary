@@ -100,17 +100,43 @@ export const updateDiary = async (
   id = '',
   rate = 1,
   body = '',
-  // image = '',
+  image = null,
 ) => {
+  let uploadResult = ''
+  if (image) {
+    const storageRef = ref(storage)
+    // 拡張子を取得
+    const ext = image.name.split('.').pop()
+    // 画像ファイル名を固定
+    const hashName = Math.random().toString(36).slice(-8)
+    const uploadRef = ref(storageRef, `/images/${hashName}.${ext}`)
+    await uploadBytes(uploadRef, image).then(async function (result) {
+      console.log(result)
+      console.log('Uploaded a blob or files!')
+      // 表示用のダウンロードURLを取得
+      await getDownloadURL(uploadRef).then(function (url) {
+        uploadResult = url
+        console.log(url)
+      })
+    })
+  }
   const diaryRef = doc(db, 'diaries', id)
 
   if (!diaryRef) {
     return false
   }
-  // Set the "capital" field of the city 'DC
-  await updateDoc(diaryRef, {
-    rate: rate,
-    body: body,
-    image: '',
-  })
+  let updateData
+  if (image.name) {
+    updateData = {
+      body: body,
+      rate: rate,
+      image: uploadResult,
+    }
+  } else {
+    updateData = {
+      body: body,
+      rate: rate,
+    }
+  }
+  await updateDoc(diaryRef, updateData)
 }
