@@ -47,12 +47,35 @@ export const fetch = async (uid = '') => {
 }
 
 // Add a new document with a generated id.
-export const postDiary = async (uid = '', rate = 1, body = '') => {
+export const postDiary = async (
+  uid = '',
+  rate = 1,
+  body = '',
+  image = null,
+) => {
+  let uploadResult = ''
+  if (image) {
+    const storageRef = ref(storage)
+    // 拡張子を取得
+    const ext = image.name.split('.').pop()
+    // 画像ファイル名を固定
+    const hashName = Math.random().toString(36).slice(-8)
+    const uploadRef = ref(storageRef, `/images/${hashName}.${ext}`)
+    await uploadBytes(uploadRef, image).then(async function (result) {
+      console.log(result)
+      console.log('Uploaded a blob or files!')
+      // 表示用のダウンロードURLを取得
+      await getDownloadURL(uploadRef).then(function (url) {
+        uploadResult = url
+        console.log(url)
+      })
+    })
+  }
   const docRef = await addDoc(collection(db, 'diaries'), {
     uid: uid,
     rate: rate,
     body: body,
-    image: '',
+    image: uploadResult,
     createdAt: dayjs().format('YYYY/MM/DD HH:mm:ss'),
   })
   console.log('Document written with ID: ', docRef.id)
