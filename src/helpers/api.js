@@ -6,20 +6,19 @@ import {
   // eslint-disable-next-line
   getDoc,
   // eslint-disable-next-line
-  addDoc,
-  // eslint-disable-next-line
-  query,
-  // eslint-disable-next-line
-  where,
-  // eslint-disable-next-line
   getDocs,
   // eslint-disable-next-line
   orderBy,
   // eslint-disable-next-line
+  query,
+  // eslint-disable-next-line
   updateDoc,
+  // eslint-disable-next-line
+  where,
 } from 'firebase/firestore'
-import { db } from './firebase'
-import dayjs from 'dayjs'
+// eslint-disable-next-line
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { db, storage } from './firebase'
 
 export const fetch = async (uid = '') => {
   const q = query(
