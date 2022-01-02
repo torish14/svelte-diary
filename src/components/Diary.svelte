@@ -16,7 +16,7 @@ onMount(async () => {
 })
 const submit = async () => {
   console.log(promise)
-  await updateDiary(id, rate, body)
+  await updateDiary(id, rate, body, image)
   /* const returnValue = await updateDiary(id, rate, body) */
   /* if (returnValue) { */
   /* alert('日記の更新が完了しました') */
