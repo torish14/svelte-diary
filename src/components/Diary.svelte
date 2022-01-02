@@ -25,6 +25,15 @@ const submit = async () => {
   /* document.location.href = '/' */
   /* } */
 }
+const onFileSelect = (e) => {
+  let target = e.target.files[0]
+  image = target
+  let reader = new FileReader()
+  reader.readAsDataURL(target)
+  reader.onload = (e) => {
+    preview = e.target.result
+  }
+}
 </script>
 
 {#await promise}
