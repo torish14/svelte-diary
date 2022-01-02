@@ -7,7 +7,7 @@ export let id
 console.log(id)
 
 let promise = getDiary()
-let rate, body
+let rate, body, image, preview
 onMount(async () => {
   promise = await getDiary(id)
   rate = promise.rate
