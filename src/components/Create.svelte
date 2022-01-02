@@ -21,7 +21,7 @@ const submit = async () => {
   // firestore へ POSTする関数を呼び出す
   console.log('submit!')
   console.log(uid, rate, body)
-  postDiary(uid, rate, body)
+  postDiary(uid, rate, body, image)
   /* const result = await postDiary(uid, rate, body) */
   /* if(!result) { */
   /* alert('日記の保存が失敗しました') */
