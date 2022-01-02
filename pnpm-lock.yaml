@@ -2,19 +2,20 @@ lockfileVersion: 5.3
 
 specifiers:
   '@rollup/plugin-commonjs': ^21.0.1
-  '@rollup/plugin-node-resolve': ^13.1.1
-  '@rollup/plugin-replace': ^3.0.0
+  '@rollup/plugin-node-resolve': ^13.1.2
+  '@rollup/plugin-replace': ^3.0.1
+  babel-eslint: ^10.1.0
   carbon-icons-svelte: ^10.44.3
   dayjs: ^1.10.7
   dotenv: ^10.0.0
-  eslint: ^8.4.1
+  eslint: ^8.6.0
   eslint-plugin-import: ^2.25.3
   eslint-plugin-svelte3: ^3.2.1
   firebase: ^9.6.1
   js-cookie: ^3.0.1
   prettier: ^2.5.1
   prettier-plugin-svelte: ^2.5.1
-  rollup: ^2.61.1
+  rollup: ^2.62.0
   rollup-plugin-css-only: ^3.1.0
   rollup-plugin-livereload: ^2.0.5
   rollup-plugin-svelte: ^7.1.0
