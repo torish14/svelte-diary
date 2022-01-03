@@ -18,6 +18,8 @@ import {
   updateDoc,
   // eslint-disable-next-line
   where,
+  // eslint-disable-next-line
+  deleteDoc,
 } from 'firebase/firestore'
 // eslint-disable-next-line
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
