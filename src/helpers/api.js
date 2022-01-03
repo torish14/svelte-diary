@@ -142,3 +142,11 @@ export const updateDiary = async (
   }
   await updateDoc(diaryRef, updateData)
 }
+
+export const deleteDiary = async (id = '') => {
+  if (!id) {
+    return false
+  }
+  await deleteDoc(doc(db, 'diaries', id))
+  return true
+}
