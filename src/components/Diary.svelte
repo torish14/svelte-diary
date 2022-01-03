@@ -1,7 +1,7 @@
 <script>
 import { onMount } from 'svelte'
 import { Slider, TextField, Button, ProgressCircular } from 'smelte'
-import { getDiary, updateDiary } from '../helpers/api'
+import { getDiary, updateDiary, deleteDiary } from '../helpers/api'
 import dayjs from 'dayjs'
 export let id
 console.log(id)
