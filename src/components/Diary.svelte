@@ -52,7 +52,7 @@ const deleteHandle = async () => {
   <h1 class="h4">
     {dayjs(promise.createdAt).format('YYYY年MM月DD日')}の日記
   </h1>
-  <form class="p-5" on:submit|preventDefault={submit}>
+  <form class="p-5 mb-10" on:submit|preventDefault={submit}>
     {#if !preview}
       <img
         src={promise.image ? promise.image : '/dummy.jpeg'}
