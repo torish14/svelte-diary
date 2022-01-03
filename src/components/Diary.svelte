@@ -34,6 +34,16 @@ const onFileSelect = (e) => {
     preview = e.target.result
   }
 }
+const deleteHandle = async () => {
+  const result = await deleteDiary(id)
+  if (result) {
+    alert('日記の削除が完了しました')
+    document.location.href = '/'
+  } else {
+    alert('削除ができませんでした')
+    document.location.href = '/'
+  }
+}
 </script>
 
 {#await promise}
