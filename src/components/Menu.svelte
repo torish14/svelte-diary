@@ -23,12 +23,12 @@ export let open
     <Router>
       <Link class="block mb-3" to="/">Home</Link>
       <Link class="block mb-3" to="about">日記の効果とは？</Link>
-      <Link class="block mb-3" to="create">日記を書く</Link>
       {#if !uid}
         <Link class="block mb-3" to="#" on:click={signInWithGoogle}
           >ログイン</Link
         >
       {:else}
+      <Link class="block mb-3" to="create">日記を書く</Link>
         <Link class="block mb-3" to="#" on:click={googleSignOut}
           >ログアウト</Link
         >
