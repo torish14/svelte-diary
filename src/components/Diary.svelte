@@ -89,4 +89,5 @@ const deleteHandle = async () => {
     />
     <Button type="submit" class="text-white-900">日記を更新</Button>
   </form>
+  <Button class="bg-alert-900 text-white-900 mb-10" on:click={deleteHandle}>日記を削除</Button>
 {/await}
