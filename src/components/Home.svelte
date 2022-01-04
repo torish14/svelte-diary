@@ -41,24 +41,28 @@ const filterHandle = async () => {
   {#await promise}
     <p class="mt-10 flex justify-center"><ProgressCircular /></p>
   {:then diaries}
-    <Router>
-      {#each diaries as d}
-        <Link to={'/diary/' + d.id} class="flex items-center mb-6">
-          <aside class="diary-aside">
-            <p class="text-left">
-              {dayjs(d.createdAt).format('YYYY年MM月DD日')}
-            </p>
-            <img
-              src={d.image ? d.image : '/dummy.jpeg'}
-              class="diary-image"
-              alt="diary"
-            />
-            <p><StarRating rating={d.rate / 2} /></p>
-            <p>{d.body}</p>
-          </aside>
-        </Link>
-      {/each}
-    </Router>
+    {#if diaries.length > 0}
+      <Router>
+        {#each diaries as d}
+          <Link to={'/diary/' + d.id} class="flex items-center mb-6">
+            <aside class="diary-aside">
+              <p class="text-left">
+                {dayjs(d.createdAt).format('YYYY年MM月DD日')}
+              </p>
+              <img
+                src={d.image ? d.image : '/dummy.jpeg'}
+                class="diary-image"
+                alt="diary"
+              />
+              <p><StarRating rating={d.rate / 2} /></p>
+              <p>{d.body}</p>
+            </aside>
+          </Link>
+        {/each}
+      </Router>
+    {:else}
+      <p>該当する日記はありません</p>
+    {/if}
   {/await}
 {/if}
 
