@@ -1,6 +1,6 @@
 <script>
-import { onDestroy } from 'svelte';
-import { Router, Link } from 'svelte-routing';
+import { onDestroy } from 'svelte'
+import { Router, Link } from 'svelte-routing'
 import { userId } from '../store'
 let uid
 

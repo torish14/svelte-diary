@@ -60,13 +60,13 @@ const deleteHandle = async () => {
         class="mb-4"
       />
     {:else}
-      <img
-        src={preview}
-        alt="diary"
-        class="mb-4"
-      />
+      <img src={preview} alt="diary" class="mb-4" />
     {/if}
-    <label for="file-input" class="bg-primary-900 text-white-900 px-4 py-3 mb-6 rounded m-auto  block w-4/12">画像を選択</label>
+    <label
+      for="file-input"
+      class="bg-primary-900 text-white-900 px-4 py-3 mb-6 rounded m-auto  block w-4/12"
+      >画像を選択</label
+    >
     <input
       type="file"
       accept="image/*"
@@ -89,5 +89,8 @@ const deleteHandle = async () => {
     />
     <Button type="submit" class="text-white-900">日記を更新</Button>
   </form>
-  <Button class="bg-alert-900 text-white-900 mb-10" on:click={deleteHandle}>日記を削除</Button>
+  <Button
+    class="bg-alert-900 text-white-900 mb-10"
+    on:click={deleteHandle}>日記を削除</Button
+  >
 {/await}

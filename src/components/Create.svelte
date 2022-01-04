@@ -61,7 +61,11 @@ const onFileSelect = (e) => {
   {#if preview}
     <img src={preview} alt="preview" />
   {/if}
-  <label for="file-input" class="bg-primary-900 text-white-900 px-4 py-3 mb-6 rounded m-auto  block w-4/12">画像を選択</label>
+  <label
+    for="file-input"
+    class="bg-primary-900 text-white-900 px-4 py-3 mb-6 rounded m-auto  block w-4/12"
+    >画像を選択</label
+  >
   <input
     type="file"
     accept="image/*"

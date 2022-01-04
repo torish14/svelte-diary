@@ -28,7 +28,7 @@ export let open
           >ログイン</Link
         >
       {:else}
-      <Link class="block mb-3" to="create">日記を書く</Link>
+        <Link class="block mb-3" to="create">日記を書く</Link>
         <Link class="block mb-3" to="#" on:click={googleSignOut}
           >ログアウト</Link
         >
