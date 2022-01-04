@@ -1,9 +1,9 @@
 <script>
 // ライフサイクルについてのドキュメント：https://tech-wiki.online/jp/svelte-lifecycle-events.html
 import dayjs from 'dayjs'
-import { Button,ProgressCircular,TextField } from 'smelte'
-import { onDestroy,onMount } from 'svelte'
-import { Link,Router } from 'svelte-routing'
+import { Button, ProgressCircular, TextField } from 'smelte'
+import { onDestroy, onMount } from 'svelte'
+import { Link, Router } from 'svelte-routing'
 import StarRating from 'svelte-star-rating'
 import { fetch } from '../helpers/api'
 import { signInWithGoogle } from '../helpers/firebase'
