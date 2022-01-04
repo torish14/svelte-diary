@@ -22,12 +22,12 @@ const submit = async () => {
   console.log('submit!')
   console.log(uid, rate, body)
   postDiary(uid, rate, body, image)
+  document.location.href = '/'
   /* const result = await postDiary(uid, rate, body) */
   /* if(!result) { */
   /* alert('日記の保存が失敗しました') */
   /* } else { */
   /* alert ('日記が保存されました！') */
-  /* document.location.href = '/' */
   /* } */
 }
 onDestroy(() => {
