@@ -31,7 +31,6 @@ export const fetch = async (uid = '', filterMonth = null) => {
   let q
   if (filterMonth) {
     filterMonth = filterMonth.replace('-', '/')
-    console.log(filterMonth)
     q = query(
       collection(db, 'diaries'),
       where('uid', '==', uid),

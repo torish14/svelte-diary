@@ -21,7 +21,6 @@ onDestroy(() => {
 })
 
 const filterHandle = async () => {
-  console.log(filterMonth)
   promise = await fetch(uid, filterMonth)
 }
 </script>
