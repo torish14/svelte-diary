@@ -19,6 +19,11 @@ onMount(async () => {
 onDestroy(() => {
   unsubscribe
 })
+
+const filterHandle = async () => {
+  console.log(filterMonth)
+  promise = await fetch(uid, filterMonth)
+}
 </script>
 
 {#if !uid}
@@ -26,6 +31,14 @@ onDestroy(() => {
     ログイン
   </Button>
 {:else}
+  <section>
+    <h5>日記を書いた月で検索</h5>
+    <TextField
+      type="month"
+      bind:value={filterMonth}
+      on:change={filterHandle}
+    />
+  </section>
   {#await promise}
     <p class="mt-10 flex justify-center"><ProgressCircular /></p>
   {:then diaries}

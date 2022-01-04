@@ -11,6 +11,8 @@ import {
   // eslint-disable-next-line
   getDocs,
   // eslint-disable-next-line
+  limit,
+  // eslint-disable-next-line
   orderBy,
   // eslint-disable-next-line
   query,
@@ -25,12 +27,26 @@ import {
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { db, storage } from './firebase'
 
-export const fetch = async (uid = '') => {
-  const q = query(
-    collection(db, 'diaries'),
-    where('uid', '==', uid),
-    orderBy('createdAt', 'desc'),
-  )
+export const fetch = async (uid = '', filterMonth = null) => {
+  let q
+  if (filterMonth) {
+    filterMonth = filterMonth.replace('-', '/')
+    console.log(filterMonth)
+    q = query(
+      collection(db, 'diaries'),
+      where('uid', '==', uid),
+      where('createdAt', '>=', filterMonth + '/01'),
+      where('createdAt', '<=', filterMonth + '/31'),
+      limit(31),
+    )
+  } else {
+    q = query(
+      collection(db, 'diaries'),
+      where('uid', '==', uid),
+      orderBy('createdAt', 'desc'),
+      limit(31),
+    )
+  }
 
   const querySnapshot = await getDocs(q)
   let diaries = []
