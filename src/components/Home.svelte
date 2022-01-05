@@ -30,7 +30,7 @@ const filterHandle = async () => {
     ログイン
   </Button>
 {:else}
-  <section>
+  <section class="m-auto mb-10 w-6/12">
     <h5>日記を書いた月で検索</h5>
     <TextField
       type="month"
