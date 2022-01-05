@@ -15,7 +15,7 @@ export let url
 <main class="bg-background-500">
   <Header />
 
-  <section class="content">
+  <section class="content p-8">
     <Router url={url}>
       <Route path="/" component={Home} />
       <Route path="diary/:id" let:params>
