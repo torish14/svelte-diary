@@ -54,7 +54,7 @@ const filterHandle = async () => {
                 class="diary-image"
                 alt="diary"
               />
-              <p><StarRating rating={d.rate / 2} /></p>
+              <p class="mb-6"><StarRating rating={d.rate / 2} /></p>
               <p>{d.body}</p>
             </aside>
           </Link>
