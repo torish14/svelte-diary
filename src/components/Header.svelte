@@ -39,9 +39,12 @@ onMount(() => {
   />
 </svelte:head>
 
-<header class="bg-primary-900 flex justify-between items-center">
+<header class="bg-primary-900 dark:bg-dark-900 flex justify-between items-center">
   <Hamburger bind:open --color="white" />
-  <BrightnessContrast32 class="mr-6 text-white-900" />
+  <BrightnessContrast32
+    class="mr-6 text-white-900"
+    on:click={toggleDark}
+  />
 </header>
 <Menu bind:open />
 
