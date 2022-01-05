@@ -12,7 +12,7 @@ import './helpers/firebase'
 export let url
 </script>
 
-<main class="bg-background-500">
+<main class="bg-background-500 dark:bg-dark-400">
   <Header />
 
   <section class="content p-8">
