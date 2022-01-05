@@ -87,10 +87,10 @@ const deleteHandle = async () => {
       rows="5"
       outlined
     />
-    <Button type="submit" class="text-white-900">日記を更新</Button>
+    <Button type="submit" class="text-white-900 dark:bg-dark-500">日記を更新</Button>
   </form>
   <Button
-    class="bg-alert-900 text-white-900 mb-10"
+    class="bg-alert-900 dark:bg-alert-500 dark-hover:bg-dark-700 text-white-900 mb-10"
     on:click={deleteHandle}>日記を削除</Button
   >
 {/await}
