@@ -76,5 +76,5 @@ const onFileSelect = (e) => {
       onFileSelect(e)
     }}
   />
-  <Button type="submit" class="text-white-900">日記を保存</Button>
+  <Button type="submit" class="text-white-900 dark:bg-dark-500">日記を保存</Button>
 </form>
