@@ -1,17 +1,3 @@
-<script>
-import 'smelte/src/tailwind.css'
-import { Route, Router } from 'svelte-routing'
-import About from './components/About.svelte'
-import Create from './components/Create.svelte'
-import Diary from './components/Diary.svelte'
-import Footer from './components/Footer.svelte'
-import Header from './components/Header.svelte'
-import Home from './components/Home.svelte'
-import './helpers/firebase'
-
-export let url
-</script>
-
 <main class="bg-background-500 dark:bg-dark-400">
   <Header />
 
@@ -28,6 +14,20 @@ export let url
 
   <Footer />
 </main>
+
+<script>
+import 'smelte/src/tailwind.css'
+import { Route, Router } from 'svelte-routing'
+import About from './components/About.svelte'
+import Create from './components/Create.svelte'
+import Diary from './components/Diary.svelte'
+import Footer from './components/Footer.svelte'
+import Header from './components/Header.svelte'
+import Home from './components/Home.svelte'
+import './helpers/firebase'
+
+export let url
+</script>
 
 <style>
 main {

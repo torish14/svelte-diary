@@ -1,25 +1,8 @@
-<script>
-import { onDestroy } from 'svelte'
-import { Router, Link } from 'svelte-routing'
-import { scale } from 'svelte/transition'
-import { quadOut } from 'svelte/easing'
-import { signInWithGoogle, googleSignOut } from '../helpers/firebase'
-import { userId } from '../store'
-let uid
-
-const unsbscribe = userId.subscribe((id) => {
-  uid = id
-})
-
-onDestroy(() => {
-  unsbscribe
-})
-
-export let open
-</script>
-
 {#if open}
-  <nav class="bg-primary-900 dark:bg-dark-900" on:click={() => (open = false)}>
+  <nav
+    class="bg-primary-900 dark:bg-dark-900"
+    on:click={() => (open = false)}
+  >
     <Router>
       <Link class="block mb-3" to="/">Home</Link>
       <Link class="block mb-3" to="about">日記の効果とは？</Link>
@@ -43,6 +26,26 @@ export let open
     />
   </nav>
 {/if}
+
+<script>
+import { onDestroy } from 'svelte'
+import { Router, Link } from 'svelte-routing'
+import { scale } from 'svelte/transition'
+import { quadOut } from 'svelte/easing'
+import { signInWithGoogle, googleSignOut } from '../helpers/firebase'
+import { userId } from '../store'
+let uid
+
+const unsbscribe = userId.subscribe((id) => {
+  uid = id
+})
+
+onDestroy(() => {
+  unsbscribe
+})
+
+export let open
+</script>
 
 <style>
 nav {

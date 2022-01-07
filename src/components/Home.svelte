@@ -1,30 +1,3 @@
-<script>
-// ライフサイクルについてのドキュメント：https://tech-wiki.online/jp/svelte-lifecycle-events.html
-import dayjs from 'dayjs'
-import { Button, ProgressCircular, TextField } from 'smelte'
-import { onDestroy, onMount } from 'svelte'
-import { Link, Router } from 'svelte-routing'
-import StarRating from 'svelte-star-rating'
-import { fetch } from '../helpers/api'
-import { signInWithGoogle } from '../helpers/firebase'
-import { userId } from '../store'
-
-let uid, filterMonth
-const unsubscribe = userId.subscribe((id) => (uid = id))
-let promise = fetch()
-onMount(async () => {
-  promise = await fetch(uid)
-  console.log(promise)
-})
-onDestroy(() => {
-  unsubscribe
-})
-
-const filterHandle = async () => {
-  promise = await fetch(uid, filterMonth)
-}
-</script>
-
 {#if !uid}
   <Button on:click={signInWithGoogle} class="text-white-900 mt-10">
     ログイン
@@ -68,6 +41,33 @@ const filterHandle = async () => {
     {/if}
   {/await}
 {/if}
+
+<script>
+// ライフサイクルについてのドキュメント：https://tech-wiki.online/jp/svelte-lifecycle-events.html
+import dayjs from 'dayjs'
+import { Button, ProgressCircular, TextField } from 'smelte'
+import { onDestroy, onMount } from 'svelte'
+import { Link, Router } from 'svelte-routing'
+import StarRating from 'svelte-star-rating'
+import { fetch } from '../helpers/api'
+import { signInWithGoogle } from '../helpers/firebase'
+import { userId } from '../store'
+
+let uid, filterMonth
+const unsubscribe = userId.subscribe((id) => (uid = id))
+let promise = fetch()
+onMount(async () => {
+  promise = await fetch(uid)
+  console.log(promise)
+})
+onDestroy(() => {
+  unsubscribe
+})
+
+const filterHandle = async () => {
+  promise = await fetch(uid, filterMonth)
+}
+</script>
 
 <style>
 .diary-aside {

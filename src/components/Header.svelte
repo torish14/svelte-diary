@@ -1,3 +1,27 @@
+<svelte:head>
+  <!-- Import base css -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/base.css"
+  />
+  <!-- Import spin css (spin is default type) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/types/spin.css"
+  />
+</svelte:head>
+
+<header
+  class="bg-primary-900 dark:bg-dark-900 flex justify-between items-center"
+>
+  <Hamburger bind:open --color="white" />
+  <BrightnessContrast32
+    class="mr-6 text-white-900"
+    on:click={toggleDark}
+  />
+</header>
+<Menu bind:open />
+
 <script>
 import { onMount } from 'svelte'
 import Hamburger from 'svelte-hamburgers'
@@ -25,28 +49,6 @@ onMount(() => {
   }
 })
 </script>
-
-<svelte:head>
-  <!-- Import base css -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/base.css"
-  />
-  <!-- Import spin css (spin is default type) -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/types/spin.css"
-  />
-</svelte:head>
-
-<header class="bg-primary-900 dark:bg-dark-900 flex justify-between items-center">
-  <Hamburger bind:open --color="white" />
-  <BrightnessContrast32
-    class="mr-6 text-white-900"
-    on:click={toggleDark}
-  />
-</header>
-<Menu bind:open />
 
 <style>
 header {
